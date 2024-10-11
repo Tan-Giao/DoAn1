@@ -1,0 +1,86 @@
+﻿@model IEnumerable<DoAn1.Models.User>
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+    <style>
+               
+                .login-container {
+                    background-color: #f32936;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                .login-container h2 {
+                    margin-bottom: 20px;
+                }
+                .login-container input {
+                    width: 95%;
+                    padding: 10px;
+                    margin: 10px 0;
+                    border: 1px solid #141313;
+                    border-radius:5px;
+                }
+                .login-container button {
+                    width: 100%;
+                    padding: 10px;
+                    background-color: #190e0e;
+                    color: #bdb6b7;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+
+
+
+         .login-container button:hover{
+
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          
+        }
+
+        .wrapper .btn:active{
+            transform: scale(0.95);
+        }
+
+
+                .error {
+                    color: rgb(231, 227, 228);
+                    margin-top: 10px;
+                    display: none;
+                }
+    </style>
+
+<body>
+
+    <div class="login-container">
+        <h2>Đăng Nhập</h2>
+        <form id="loginForm">
+            <input type="text" id="Tên Người Dùng" placeholder="Tên Người Dùng" required>
+            <input type="password" id="Mật khẩu" placeholder="Mật Khẩu" required>
+            <button type="submit">Đăng Nhập</button>
+            <p class="error" id="error-message">Invalid username or password</p>
+        </form>
+    </div>
+
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simple check for demonstration purposes
+            if (username === "admin" && password === "1234") {
+                alert("Login successful!");
+            } else {
+                document.getElementById('error-message').style.display = "block";
+            }
+        });
+    </script>
+
+</body>

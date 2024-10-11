@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head></head>
+    <body>
+    <section class="banner">
+        <img id="Banner" src="~/img/trangchu/Banner1.jpg" style="width: 100%;">
+    </section>
+
+    <script>
+                const images = [
+            "img/trangchu/Banner1.jpg",
+            "img/trangchu/Banner2.jpg",
+            "img/trangchu/Banner3.jpg"
+        ];
+
+        let currentIndex = 0;
+
+        function changeImage() {
+            currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            const imgElement = document.getElementById("Banner");
+            imgElement.src = images[currentIndex];
+        }
+
+        setInterval(changeImage, 2000);
+    </script>
+
+
+    <div class="Vechungtoi" style="display: flex; font-size:50px; font-weight:400; justify-content: center; align-items: center; block-size:100px;">Sản Phẩm Nổi Bật</div>
+    
+        <style>
+            .product-list {
+                display: flex;
+                justify-content: space-between; /* Khoảng cách giữa các sản phẩm */
+                flex-wrap: wrap; /* Nếu có nhiều sản phẩm hơn, chúng sẽ xuống hàng */
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+            }
+
+            .product-item {
+                width: 23%; /* Chiều rộng cho 4 sản phẩm nằm trên 1 hàng */
+                border: 1px solid #ccc;
+                padding: 20px;
+                box-sizing: border-box;
+                text-align: center;
+                margin-bottom: 20px; /* Khoảng cách giữa các dòng sản phẩm */
+            }
+
+                .product-item img {
+                    max-width: 100%;
+                    height: auto;
+                }
+
+                .product-item h3 {
+                    font-size: 18px;
+                    margin: 10px 0;
+                }
+
+                .product-item p {
+                    font-size: 14px;
+                    color: #777;
+                }
+        </style>
+    
+    
+
+        <ul class="product-list">
+            <li class="product-item">
+                <img src="~/img/SanPhams/ASUS_ROG.jpg" alt="Product 1">
+                <h3>ASUS ROG STRIX G15</h3>
+                <p>300000000đ</p>
+                
+            <a asp-controller="Carts" asp-action="Create" asp-route-id=""><button>Thêm Vào Giỏ</button></a>
+            </li>
+            <li class="product-item">
+                <img src="https://via.placeholder.com/150" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$20.00</p>
+            <a asp-controller="Carts" asp-action="Create" asp-route-id=""><button>Thêm Vào Giỏ</button></a>
+            </li>
+            <li class="product-item">
+                <img src="https://via.placeholder.com/150" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>$30.00</p>
+            <a asp-controller="Carts" asp-action="Create" asp-route-id=""><button>Thêm Vào Giỏ</button></a>
+            </li>
+            <li class="product-item">
+                <img src="https://via.placeholder.com/150" alt="Product 4">
+                <h3>Product 4</h3>
+                <p>$40.00</p>
+            <a asp-controller="Carts" asp-action="Create" asp-route-id=""><button>Thêm Vào Giỏ</button></a>
+          
+
+            </li>
+        </ul>
+
+
+
+
+
+    
+
+
+    </body>
+
+</html>

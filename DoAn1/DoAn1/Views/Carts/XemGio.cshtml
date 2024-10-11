@@ -1,0 +1,101 @@
+﻿@model IEnumerable<DoAn1.Models.Cart>
+
+@{
+    ViewData["Title"] = "XemGio";
+}
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+
+<body>
+
+    <h1 style="text-align: center;">Giỏ Hàng Bán Laptop</h1>
+
+    <table>
+        <tr>
+            <th>Sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá</th>
+            <th>Tổng</th>
+        </tr>
+        <tr>
+            <td>Laptop Dell Inspiron</td>
+            <td><input type="number" value="1" min="1" style="width: 50px;"></td>
+            <td>20.000.000₫</td>
+            <td>20.000.000₫</td>
+        </tr>
+        <tr>
+            <td>Laptop HP Envy</td>
+            <td><input type="number" value="1" min="1" style="width: 50px;"></td>
+            <td>18.000.000₫</td>
+            <td>18.000.000₫</td>
+        </tr>
+        <tr>
+            <td>Laptop HP Envy</td>
+            <td><input type="number" value="1" min="1" style="width: 50px;"></td>
+            <td>18.000.000₫</td>
+            <td>18.000.000₫</td>
+        </tr>
+        <tr>
+            <td>Laptop HP Envy</td>
+            <td><input type="number" value="1" min="1" style="width: 50px;"></td>
+            <td>18.000.000₫</td>
+            <td>18.000.000₫</td>
+        </tr>
+        <tr>
+            <td>Laptop HP Envy</td>
+            <td><input type="number" value="1" min="1" style="width: 50px;"></td>
+            <td>18.000.000₫</td>
+            <td>18.000.000₫</td>
+        </tr>
+        <tr>
+            <td>Laptop HP Envy</td>
+            <td><input type="number" value="1" min="1" style="width: 50px;"></td>
+            <td>18.000.000₫</td>
+            <td>18.000.000₫</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="total">Tổng Cộng:</td>
+            <td class="total">38.000.000₫</td>
+        </tr>
+    </table>
+
+    <div style="text-align: center;">
+        <button class="btn">Thanh Toán</button>
+    </div>
+
+</body>
+</html>

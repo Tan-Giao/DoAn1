@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DoAn1.Models.SanPham>
+
+@{
+    ViewData["Title"] = "View";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <@Html.DisplayNameFor(model => model.NameId)>Tên Sản Phẩm</>
+            </th>
+            <th>
+                <@Html.DisplayNameFor(model => model.Description)>Mô tả</>
+            </th>
+            <th>
+                <@Html.DisplayNameFor(model => model.Price)>Giá</>
+            </th>
+           
+            <th>
+                <@Html.DisplayNameFor(model => model.ImageUrl)>Ảnh</>
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+           
+            <td>
+                    @{
+                        string imageurl = "~/img/SanPhams/" + item.ImageUrl;
+                    }
+                    <img src="@Url.Content(imageurl)" height="100" width="100" alt="@item.ImageUrl" />
+               
+            </td>
+            
+            <td>
+                
+                <a asp-controller="Carts" asp-action="Create" asp-route-id="@item.ProductsId">Thêm Vào Giỏ</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

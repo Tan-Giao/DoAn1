@@ -1,0 +1,20 @@
+﻿.navbar-logo {
+    background: url(../../Images/cusclogo.jpg) no-repeat top left;
+    display: block;
+    width: 70px;
+    height: 52px;
+    text-indent: -9999px; /* hides the link text */
+}
+
+------------------------------------------------------------------------
+@Html.ActionLink(&quot;CUSC-QLĐD&quot;, &quot;Index&quot;, &quot;Home&quot;, new {
+    area = &quot;
+    &quot;
+}
+
+, new {
+    @class = &quot;
+    navbar-logo &quot;
+}
+
+)
